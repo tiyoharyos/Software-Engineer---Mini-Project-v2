@@ -1,0 +1,54 @@
+/* style.css */
+
+/* Sidebar */
+.sidebar {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.sidebar-link {
+  color: #007bff;
+}
+
+/* Pokemon Card */
+.pokemon-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.pokemon-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Pokemon Detail */
+.pokemon-detail {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.btn-catch {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-catch:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.btn-release {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-release:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
