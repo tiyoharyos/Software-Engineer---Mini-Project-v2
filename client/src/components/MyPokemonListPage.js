@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../App.css'; 
-function MyPokemonList() {
+import { Card, Button, Row, Col } from 'react-bootstrap';
+
+const MyPokemonList = () => {
   const [myPokemonList, setMyPokemonList] = useState([]);
 
   useEffect(() => {
@@ -32,17 +33,35 @@ function MyPokemonList() {
       });
   };
 
+  const Title = {
+    fontSize: '4rem',
+    fontWeight: '800',
+    lineHeight: '1',
+    textShadow: '2px 2px black',
+    color: "white",
+  };
+
+  const containerStyle = {
+    paddingTop: '20px', // Add some padding top for better visual appearance
+  };
+
   return (
     <div>
-      <h1>My Pokemon List</h1>
-      <ul>
-        {myPokemonList.map(pokemon => (
-          <li key={pokemon.id}>
-            {pokemon.nickname} ({pokemon.name})
-            <button onClick={() => releasePokemon(pokemon.id)}>Release</button>
-          </li>
-        ))}
-      </ul>
+      <div style={containerStyle}>
+        <h1 className="text-center mb-5" style={Title}>My Pokemon List</h1>
+        <Row className="justify-content-center">
+          {myPokemonList.map(pokemon => (
+            <Col key={pokemon.id} xs={12} sm={6} md={4} lg={3} className="mb-3">
+              <Card>
+                <Card.Body className="text-center">
+                  <Card.Title>{pokemon.nickname} ({pokemon.name})</Card.Title>
+                  <Button onClick={() => releasePokemon(pokemon.id)} variant="danger">Release</Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </div>
     </div>
   );
 }
